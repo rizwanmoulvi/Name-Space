@@ -73,7 +73,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className='w-full h-screen bg-darkGray text-center'>
+    <div className='w-full h-screen bg-darkGray text-center overflow-hidden'>
       <header className='flex w-full bg-lightGray fixed justify-between p-[0.75rem] z-50'>
         <div className='flex items-center text-left ml-10'>
           <FontAwesomeIcon
@@ -113,7 +113,7 @@ const Home = () => {
           </div>
         </div>
       </header>
-      <div className='py-[17.5rem] flex flex-col items-center justify-center w-full gap-[2rem]'>
+      <div className='py-[9rem] flex flex-col items-center justify-center w-full gap-[2rem]'>
         <p className='text-9xl font-bold text-textGray'>
           Name <span className='text-beige'>Space</span>
         </p>
@@ -121,7 +121,7 @@ const Home = () => {
           Web3 Domain Name Service Launchpad For Organizations
         </p>
 
-        <span className='flex mt-10 flex-row gap-[2rem]'>
+        <span className='flex mt-5 flex-row gap-[2rem]'>
           <Link to={'/organization'}>
             <button
               className='px-[2rem] py-[1rem] text-[1.5rem] font-medium text-peach bg-lightGray rounded-2xl'
@@ -147,6 +147,21 @@ const Home = () => {
             </button>
           </Link>
         </span>
+
+        <div className='flex rounded-lg px-5 py-3 mr-10 mt-2 gap-4'>
+        <div className='flex flex-col items-center mx-auto max-w-lg'>
+          <p className='text-xl font-bold text-white pb-5'>Follow The Video To Know How To Use The Platform</p>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/SDsr1RqfaMc"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
       </div>
     </div>
   );
