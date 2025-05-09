@@ -17,7 +17,7 @@ contract DomainFactory {
     }
 
     function createDomain(string memory _tld) public payable {
-        require(msg.value == 0.01 ether, "You need to send exactly 0.01 EDU to create a domain");
+        require(msg.value == 0.01 ether, "You need to send exactly 0.01 XPT to create a domain");
 
         // Check if the TLD already exists
         for (uint i = 0; i < deployedDomains.length; i++) {

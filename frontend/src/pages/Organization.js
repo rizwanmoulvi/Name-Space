@@ -2,18 +2,18 @@ import '../styles/App.css';
 import { ethers } from 'ethers';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useNavigate } from 'react-router-dom';
-import ethLogo from '../assets/ethlogo.svg';
+import ethLogo from '../assets/xphere.png';
 import { networks } from '../utils/networks';
 import contractAbi from '../utils/DomainFactory.json';
 import React, { useEffect, useState } from 'react';
-import polygonLogo from '../assets/polygonlogo.svg';
+import polygonLogo from '../assets/xphere.png';
 import { faCopy, faSquare } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
-const CONTRACT_ADDRESS = '0xd773bE644ec4C5a9e0E2A85530902eB39AC28E79';
+const CONTRACT_ADDRESS = '0x51bbE8d32Db10876005669a3EB18C276A7186619';
 const Organization = () => {
   const [domains, setDomains] = useState([]);
   const [tld, setTld] = useState('');
@@ -100,7 +100,7 @@ const Organization = () => {
 
         if (receipt.status === 1) {
           console.log(
-            'Domain created! https://sepolia.lineascan.build/tx/' + //to change
+            'Domain created! https://xpt.tamsa.io/tx/' + //to change
               tx.hash
           );
           setTimeout(() => {
@@ -115,7 +115,7 @@ const Organization = () => {
       console.log(error);
       if (error.code === 'INSUFFICIENT_FUNDS') {
         alert(
-          'Transaction failed due to insufficient funds for gas. Please ensure you have enough ETH to cover the gas fees.'
+          'Transaction failed due to insufficient funds for gas. Please ensure you have enough XPT to cover the gas fees.'
         );
       } else {
         alert('Creation failed (Duplicate TLD). Please try again.');
@@ -152,7 +152,7 @@ const Organization = () => {
         let tx = await contract.withdraw();
         await tx.wait();
         console.log(
-          'Funds withdrawn! https://sepolia.lineascan.build/tx/' + //to change
+          'Funds withdrawn! https://xpt.tamsa.io/tx/' + //to change
             tx.hash
         );
       }
@@ -245,7 +245,7 @@ const Organization = () => {
       try {
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: '0xe705' }],
+          params: [{ chainId: '0x1e808f' }],
         });
       } catch (error) {
         if (error.code === 4902) {
@@ -254,15 +254,15 @@ const Organization = () => {
               method: 'wallet_addEthereumChain',
               params: [
                 {
-                  chainId: '0xe705',
-                  chainName: 'Linea Sepolia Testnet',
-                  rpcUrls: ['https://linea-sepolia.infura.io/v3/'],
+                  chainId: '0x1e808f',
+                  chainName: 'XPhere Testnet',
+                  rpcUrls: ['http://testnet.x-phere.com/'],
                   nativeCurrency: {
-                    name: 'ETH',
-                    symbol: 'ETH',
+                    name: 'XPT',
+                    symbol: 'XPT',
                     decimals: 18,
                   },
-                  blockExplorerUrls: ['https://sepolia.lineascan.build/'],
+                  blockExplorerUrls: ['https://xpt.tamsa.io/tx/'],
                 },
               ],
             });
@@ -280,11 +280,11 @@ const Organization = () => {
   };
 
   const renderInputForm = () => {
-    if (network !== 'Linea Sepolia Testnet') {
+    if (network !== 'XPhere-Testnet') {
       return (
         <div className='flex flex-col items-center mx-auto max-w-lg gap-[1rem]'>
           <pre className='text-[1.25rem] text-peach'>
-            {'!  Please connect to Linea Sepolia Testnet  !'}
+            {'!  Please connect to XPhere Testnet  !'}
           </pre>
           <button
             className='px-[1.5rem] py-[0.75rem] text-textGreen bg-textGray font-bold rounded-lg'
@@ -320,7 +320,7 @@ const Organization = () => {
             {loading ? 'Creating...' : 'Create A Domain'}
           </button>
         </div>
-        <p className='text-peach'>( Fee 0.01 ETH )</p>
+        <p className='text-peach'>( Fee 0.01 XPT )</p>
       </div>
     );
   };

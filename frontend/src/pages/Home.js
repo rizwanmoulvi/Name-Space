@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-// import { ethers } from 'ethers';
+import { ethers } from 'ethers';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquare } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
-import polygonLogo from '../assets/polygonlogo.svg';
-import ethLogo from '../assets/ethlogo.svg';
+import polygonLogo from '../assets/xphere.png';
+import ethLogo from '../assets/xphere.png';
 import { networks } from '../utils/networks';
 // import contractAbi from '../utils/DomainFactory.json';
 
-// const CONTRACT_ADDRESS = '0x376343F54fC19fCC383Af473e9Cd2d39Fd5cd0C7';
+// const CONTRACT_ADDRESS = '0x51bbE8d32Db10876005669a3EB18C276A7186619';
 
 const Home = () => {
   const [currentAccount, setCurrentAccount] = useState('');
@@ -148,20 +148,7 @@ const Home = () => {
           </Link>
         </span>
 
-        <div className='flex rounded-lg px-5 py-3 mr-10 mt-2 gap-4'>
-        <div className='flex flex-col items-center mx-auto max-w-lg'>
-          <p className='text-xl font-bold text-white pb-5'>Follow The Video To Know How To Use The Platform</p>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/SDsr1RqfaMc"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </div>
+
       </div>
     </div>
   );

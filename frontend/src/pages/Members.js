@@ -2,16 +2,16 @@ import '../styles/App.css';
 import { ethers } from 'ethers';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useNavigate } from 'react-router-dom';
-import ethLogo from '../assets/ethlogo.svg';
+import ethLogo from '../assets/xphere.png';
 import { networks } from '../utils/networks';
 import contractAbi from '../utils/DomainFactory.json';
 import React, { useEffect, useState } from 'react';
-import polygonLogo from '../assets/polygonlogo.svg';
+import polygonLogo from '../assets/xphere.png';
 import { faCopy, faSquare } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
-const CONTRACT_ADDRESS = '0xd773bE644ec4C5a9e0E2A85530902eB39AC28E79';
+const CONTRACT_ADDRESS = '0x51bbE8d32Db10876005669a3EB18C276A7186619';
 
 const Members = () => {
   const [domains, setDomains] = useState([]);
@@ -166,7 +166,7 @@ const Members = () => {
   }, []);
 
   useEffect(() => {
-    if (network === 'Linea Sepolia Testnet') {
+    if (network === 'XPhere-Testnet') {
       fetchDomains();
     }
   }, [currentAccount, network]);

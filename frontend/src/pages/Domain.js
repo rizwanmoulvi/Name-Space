@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import { ethers } from 'ethers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy, faSquare } from '@fortawesome/free-regular-svg-icons';
-import polygonLogo from '../assets/polygonlogo.svg';
-import ethLogo from '../assets/ethlogo.svg';
+import polygonLogo from '../assets/xphere.png';
+import ethLogo from '../assets/xphere.png';
 import { networks } from '../utils/networks';
 import { Link } from 'react-router-dom';
 import domainAbi from '../utils/Domains.json'; // Import ABI of the Domains contract
